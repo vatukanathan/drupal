@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name     = "drupal"
-  s.version  = "1.0.0"
+  s.version  = "0.0.1"
   s.date     = "2008-09-29"
   s.summary  = "Drupal development kit"
   s.email    = "tj@vision-media.ca"
@@ -14,21 +14,21 @@ Gem::Specification.new do |s|
 		"Rakefile", 
 		"drupal.gemspec", 
 		"lib/drupal.rb", 
-		"lib/drupal.create.module.rb", 
-		"lib/drupal.todo.list.rb", 
-		"lib/templates/comments/file", 
-		"lib/templates/comments/large", 
-		"lib/templates/hooks/block", 
-		"lib/templates/hooks/boot", 
-		"lib/templates/hooks/cron", 
-		"lib/templates/hooks/form_alter", 
-		"lib/templates/hooks/init", 
-		"lib/templates/hooks/menu", 
-		"lib/templates/hooks/perm", 
-		"lib/templates/hooks/schema", 
-		"lib/templates/hooks/theme", 
-		"lib/templates/txt/changelog", 
-		"lib/templates/txt/readme", 
+		"lib/drupal/create_module.rb", 
+		"lib/drupal/todo_list.rb", 
+		"lib/drupal/templates/comments/file", 
+		"lib/drupal/templates/comments/large", 
+		"lib/drupal/templates/hooks/block", 
+		"lib/drupal/templates/hooks/boot", 
+		"lib/drupal/templates/hooks/cron", 
+		"lib/drupal/templates/hooks/form_alter", 
+		"lib/drupal/templates/hooks/init", 
+		"lib/drupal/templates/hooks/menu", 
+		"lib/drupal/templates/hooks/perm", 
+		"lib/drupal/templates/hooks/schema", 
+		"lib/drupal/templates/hooks/theme", 
+		"lib/drupal/templates/txt/changelog", 
+		"lib/drupal/templates/txt/readme", 
 		"bin/drupal"]
   s.test_files = ["test/test_drupal.rb"]
   s.rdoc_options = ["--main", "README.txt"]
