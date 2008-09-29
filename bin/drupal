@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-# TODO: what should this be?
-require '../lib/drupal'
+require 'drupal'
 Drupal.new.run(ARGV)
+
