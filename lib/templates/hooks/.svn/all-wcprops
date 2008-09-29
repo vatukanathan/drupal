@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repo/!svn/ver/1975/Tools/Scripts/drupal/templates/hooks
+END
+schema
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repo/!svn/ver/1975/Tools/Scripts/drupal/templates/hooks/schema
+END
+cron
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repo/!svn/ver/1975/Tools/Scripts/drupal/templates/hooks/cron
+END
+theme
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repo/!svn/ver/1975/Tools/Scripts/drupal/templates/hooks/theme
+END
+boot
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repo/!svn/ver/1975/Tools/Scripts/drupal/templates/hooks/boot
+END
+init
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repo/!svn/ver/1975/Tools/Scripts/drupal/templates/hooks/init
+END
+perm
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repo/!svn/ver/1975/Tools/Scripts/drupal/templates/hooks/perm
+END
+menu
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repo/!svn/ver/1975/Tools/Scripts/drupal/templates/hooks/menu
+END
+block
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repo/!svn/ver/1975/Tools/Scripts/drupal/templates/hooks/block
+END
+form_alter
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repo/!svn/ver/1975/Tools/Scripts/drupal/templates/hooks/form_alter
+END

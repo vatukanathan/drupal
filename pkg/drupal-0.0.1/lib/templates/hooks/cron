@@ -1,0 +1,7 @@
+
+/**
+ * Implementation of hook_cron().
+ */
+function [module]_cron() {
+
+}

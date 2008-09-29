@@ -1,0 +1,11 @@
+
+/**
+ * Implementation of hook_theme().
+ */
+function [module]_theme($existing, $type, $theme, $path) {
+  return array(
+    'forum_topic_navigation' => array(
+      'arguments' => array('node' => NULL),
+    ),
+  );
+}

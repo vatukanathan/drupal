@@ -1,0 +1,7 @@
+
+/**
+ * Implementation of hook_init().
+ */
+function [module]_init() {
+
+}

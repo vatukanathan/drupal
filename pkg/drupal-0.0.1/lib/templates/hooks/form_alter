@@ -1,0 +1,11 @@
+
+/**
+ * Implementation of hook_form_alter().
+ */
+function [module]_form_alter(&$form, $form_state, $form_id) {
+  switch($form_id) {
+	  case '':
+	    // @todo: do something
+	    break;
+  }
+}

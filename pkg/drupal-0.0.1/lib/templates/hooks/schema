@@ -1,0 +1,37 @@
+
+/**
+ * Implementation of hook_schema().
+ */
+function [module]_schema() {
+  $schema = array();
+
+	$schema['[module]'] = array(
+	    'description' => t('Table description here.'),
+	    'fields' => array(
+	      'id' => array(
+	        'description' => t('Primary identifier.'),
+	        'type' => 'serial',
+	        'unsigned' => TRUE,
+	        'not null' => TRUE),
+	      'status' => array(
+	        'description' => t('Status. 0 = unpublished, 1 = published.'),
+	        'type' => 'int',
+					'size' => 'tiny',
+	        'not null' => FALSE,
+	        'default' => 0),
+	      'created' => array(
+	        'description' => t('The Unix timestamp when the row was created.'),
+	        'type' => 'int',
+	        'not null' => TRUE,
+	        'default' => 0),
+	       ),
+	    'indexes' => array(
+	      'status' => array('status'),
+	      'created' => array('created'),
+	      'id_status' => array('id', 'status'),
+	      ),
+	    'primary key' => array('id'),
+	    );
+	
+  return $schema;
+}
