@@ -1,7 +1,0 @@
-
-/**
- * Implementation of hook_perm().
- */
-function [module]_perm() {
-  return array('administer [module]');
-}

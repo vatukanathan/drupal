@@ -1,7 +1,0 @@
-
-/**
- * Implementation of hook_boot().
- */
-function [module]_boot() {
-
-}

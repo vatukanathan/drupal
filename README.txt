@@ -44,7 +44,7 @@ to quickly generate and manage Drupal modules.
 
 == INSTALL:
 
-	sudo gem install san
+	sudo gem install drupal
 
 == AUTHOR:
 
