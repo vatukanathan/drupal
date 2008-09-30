@@ -45,6 +45,12 @@ to quickly generate and manage Drupal modules.
 == INSTALL:
 
 	sudo gem install drupal
+	
+== TODO:
+
+  * Add download of Drupal core install via 'install core [version]'
+  * Add download of modules 'install <module> [version]' 
+  * Add deployment of install via Rakefile
 
 == AUTHOR:
 
