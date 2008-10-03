@@ -17,8 +17,8 @@ to quickly generate and manage Drupal modules.
 
 == ARGUMENTS:
 
-	create module        Generates a module skeleton from an interactive wizard.
-	todo list [total]    Displays list of todo items or a total.
+	create module <module_name>   Generates a module skeleton from an interactive wizard.
+	todo list [total]    				  Displays list of todo items or a total.
 
 == OPTIONS:
 
@@ -41,10 +41,6 @@ to quickly generate and manage Drupal modules.
 
   View total todo items only.
      drupal todo list total ./sites/all/modules
-
-== INSTALL:
-
-	sudo gem install drupal
 	
 == TODO:
 
