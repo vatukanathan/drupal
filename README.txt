@@ -50,7 +50,7 @@ to quickly generate and manage Drupal modules.
 
   * Add download of Drupal core install via 'install core [version]'
   * Add download of modules 'install <module> [version]' 
-  * Add deployment of install via Rakefile
+  * Add graceful error handling
 
 == AUTHOR:
 

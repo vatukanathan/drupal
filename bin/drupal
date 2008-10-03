@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
 
-require 'rubygems'
-require File.expand_path('lib/drupal.rb')
+require 'drupal'
 Drupal.new.run(ARGV)

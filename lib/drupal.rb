@@ -10,15 +10,13 @@ class Drupal
   
   MAJOR = 0
   MINOR = 0
-  TINY = 1
+  TINY = 2
   VERSION = [MAJOR, MINOR, TINY].join('.')
   
   # Run the drupal development tool.
   def run(arguments) 
     @arguments = arguments || [] 
     @options = OpenStruct.new
-    @options.trace = false
-    @options.verbose = false
     abort 'Arguments required.' if @arguments.empty?
     parse_options
     determine_handler

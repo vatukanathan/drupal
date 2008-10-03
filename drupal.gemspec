@@ -1,12 +1,13 @@
 Gem::Specification.new do |s|
   s.name     = "drupal"
-  s.version  = "0.0.1"
+  s.version  = "0.0.2"
   s.date     = "2008-09-29"
   s.summary  = "Drupal development kit"
   s.email    = "tj@vision-media.ca"
   s.homepage = "http://vision-media.ca/resources/ruby/drupal-gem"
   s.description = "Drupal is an open source Ruby development tool allowing developers to quickly generate and manage Drupal modules."
   s.has_rdoc = true
+  s.require_path = "lib"
   s.authors  = ["tj@vision-media.ca"]
   s.files    = ["History.txt", 
 		"Manifest.txt", 
@@ -30,6 +31,7 @@ Gem::Specification.new do |s|
 		"lib/drupal/templates/txt/changelog", 
 		"lib/drupal/templates/txt/readme", 
 		"bin/drupal"]
+	s.executables = ["drupal"]
   s.test_files = ["test/test_drupal.rb"]
   s.rdoc_options = ["--main", "README.txt"]
   s.extra_rdoc_files = ["History.txt", "Manifest.txt", "README.txt"]

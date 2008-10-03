@@ -1,16 +1,16 @@
 # -*- ruby -*-
 
 require 'rubygems'
-require './lib/drupal.rb'
+require File.dirname(__FILE__) + '/lib/drupal'
 
-desc 'Build and install the gem for testing.'
+desc 'Build and install ruby gem.'
 task :build do
-  sh %(gem build drupal.gemspec)
-  sh %(gem install drupal-#{Drupal::VERSION}.gem)
+  sh "gem build ./drupal.gemspec"
+  sh "gem install drupal-#{Drupal::VERSION}.gem"
 end
 
-desc 'Remove gem build.'
-task :unbuild do
-  sh %(gem uninstall drupal)
-  sh %(rm drupal-#{Drupal::VERSION}.gem)
+desc 'Remove ruby gem build data.'
+task :remove_build do
+  sh "gem uninstall drupal"
+  sh "rm drupal-#{Drupal::VERSION}.gem"
 end
