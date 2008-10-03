@@ -1,6 +1,6 @@
 = drupal
 
-http://vision-media.ca/resources/ruby/drupal-gem
+http://vision-media.ca/resources/ruby/drupal-module-builder-gem
 
 == DESCRIPTION:
 

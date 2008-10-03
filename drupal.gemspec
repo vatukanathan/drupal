@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.date     = "2008-09-29"
   s.summary  = "Drupal development kit"
   s.email    = "tj@vision-media.ca"
-  s.homepage = "http://vision-media.ca/resources/ruby/drupal-gem"
+  s.homepage = "http://vision-media.ca/resources/drupal/drupal-module-builder-gem"
   s.description = "Drupal is an open source Ruby development tool allowing developers to quickly generate and manage Drupal modules."
   s.has_rdoc = true
   s.require_path = "lib"
