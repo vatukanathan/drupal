@@ -8,15 +8,30 @@ class Drupal
     # Attempt to download core installation or module.
     def run(arguments)
       @project = arguments[0]
-      @dest = arguments[1] || '.' # TODO: strip leading /
+      @dest = arguments[1] || '.' 
       abort "Destination #{@dest} is not a directory." unless File.directory?(@dest)
       abort 'Project name required (core | <project>).' if arguments.empty?
-      check_core
-      install_project
+      install_projects
     end
     
     def debug(message)
       puts '... ' + message
+    end
+    
+    # Install single project or iterate lists.
+    def install_projects
+      if @project.include? ','
+        projects = @project.split ','
+        projects.each do |p|
+          @project = p
+          check_core
+          install_project 
+          puts
+        end   
+      else
+        check_core
+        install_project
+      end
     end
     
     # Check if the destination is empty.
@@ -60,14 +75,14 @@ class Drupal
         end
         debug "Copied tarball to #{@tarpath}"
       rescue
-        abort "Failed to find #{@tarpath}"
+        abort "Failed to copy remote tarball #{@tarball}"
       end
       
       # Extract tarball
-      @pwd = File.dirname(__FILE__)
-      Dir.chdir File.dirname(@tarpath)
+      @pwd = Dir.getwd
+      Dir.chdir File.dirname(@tarpath) and debug "Changed cwd to #{File.dirname(@tarpath)}" unless @dest == '.'
       Kernel.system "tar -xf #{@tarpath}" rescue abort "Failed to extract #{@tarpath}"
-      Dir.chdir @pwd
+      Dir.chdir @pwd and debug "Reverted cwd back to #{@pwd}" unless @dest == '.'
       
       # Remove tarball
       Kernel.system "rm #{@tarpath}" rescue abort "Failed to remove #{@tarpath}"

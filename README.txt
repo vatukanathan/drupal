@@ -48,6 +48,8 @@ to quickly generate and manage Drupal modules.
   * Add formatted help option
   * Support versions for installer
   * Support version prompt for project installation
+  * Support installing a list from file(s) so that devs may have lists of core modules they use
+  * Add installer for jQuery plugins?
   * Add graceful error handling
   * Add tests
   * Refactor / encapsulate entire project

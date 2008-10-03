@@ -6,9 +6,9 @@
 #
 # == ARGUMENTS:
 # 
-#   create module <module_name> [dir]  Generates a module skeleton from an interactive wizard. Current directory unless [dir] is specified.
-#   todo list [total]                  Displays list of todo items or a total.   
-#   install <core | project> [dir]  	 Install a Drupal project or core itself to [dir]
+#   create module <module_name> [dir]      Generates a module skeleton from an interactive wizard. Current directory unless [dir] is specified.
+#   todo list [total]                      Displays list of todo items or a total.   
+#   install <core | project ...> [dir]  	 Install Drupal project(s) to [dir] or the current directory.
 #
 # == OPTIONS:
 # 
@@ -37,6 +37,9 @@
 #  
 #   Install a module when in the 'modules directory
 #     drupal install devel
+#
+#   Install several modules to the modules folder
+#     drupal install devel,pathauto,err,ac ./sites/all/modules
 #  
    
 require 'optparse'
@@ -49,7 +52,7 @@ class Drupal
   
   MAJOR = 0
   MINOR = 0
-  TINY = 3
+  TINY = 4
   VERSION = [MAJOR, MINOR, TINY].join('.')
   
   # Run the drupal development tool.
