@@ -33,7 +33,7 @@ Gem::Specification.new do |s|
 		"lib/drupal/templates/txt/readme", 
 		"bin/drupal"]
 	s.executables = ["drupal"]
-  s.test_files = ["test/test_drupal.rb"]
+  s.test_files = ["test/test_drupal.rb", "test/test_install.rb", "test/test_create_module.rb", "test/test_todo_list.rb"]
   s.rdoc_options = ["--main", "README.txt"]
   s.extra_rdoc_files = ["History.txt", "Manifest.txt", "README.txt"]
 end

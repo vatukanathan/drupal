@@ -14,3 +14,8 @@ task :remove do
   sh "sudo gem uninstall drupal"
   sh "sudo rm drupal-#{Drupal::VERSION}.gem"
 end
+
+desc 'Run tests.'
+task :test do
+  sh "ruby " + File.dirname(__FILE__) + '/test/test_drupal.rb' + ' -r tk'
+end
