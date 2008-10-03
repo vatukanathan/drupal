@@ -48,9 +48,11 @@ to quickly generate and manage Drupal modules.
 	
 == TODO:
 
+  * Add formatted help option
   * Add download of Drupal core install via 'install core [version]'
   * Add download of modules 'install <module> [version]' 
   * Add graceful error handling
+  * Add tests
 
 == AUTHOR:
 

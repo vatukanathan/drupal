@@ -86,6 +86,7 @@ class Drupal
       self.create_module_file
       self.create_module_install_file
       self.create_module_info_file
+      puts 'Module created :)'
     end
     
     # Create directories.
@@ -159,7 +160,7 @@ class Drupal
       # TODO: is \n included with STDIN?
       _template = template
       filepath = "#{@dir}/#{@module}/#{filepath}"
-      template = "./templates/#{template}"
+      template = File.dirname(__FILE__) + "/templates/#{template}"
       puts "... Adding template '#{_template}' to '#{filepath}'"
       contents = File.read(template)
       tokens.each_pair do |token, value|
@@ -195,7 +196,7 @@ class Drupal
     
     # Get array of templates of a certain type.
     def get_templates(type)
-      Dir['./templates/' << type << '/*']
+      Dir[File.dirname(__FILE__) + '/templates/' << type << '/*']
     end
   end
 end

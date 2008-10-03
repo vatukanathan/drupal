@@ -3,6 +3,7 @@
 * 2 Bug Fixes:
 
   * Executable
+  * Fixed template filepath errors
 
 === 0.0.1 / 2008-09-27
 
