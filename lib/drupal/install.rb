@@ -1,5 +1,6 @@
 
-require 'open-uri'
+require 'zlib'
+require 'net/http'
 
 class Drupal
   class Install
@@ -7,13 +8,11 @@ class Drupal
     # Attempt to download core installation or module.
     def run(arguments)
       @project = arguments[0]
-      @dest = arguments[1] || '.'
+      @dest = arguments[1] || '.' # TODO: strip leading /
+      abort "Destination #{@dest} is not a directory." unless File.directory?(@dest)
       abort 'Project name required (core | <project>).' if arguments.empty?
-      print "Destination '#{@dest}' is not empty, are you sure you want continue installation? (yes|no): " unless destination_empty?
-      confirmation = STDIN.gets unless destination_empty?
-      abort 'Installation aborted.' unless confirmation =~ /y|yes/ 
       check_core
-      install_project if project_exists?
+      install_project
     end
     
     def debug(message)
@@ -30,14 +29,6 @@ class Drupal
       @project = 'drupal' if @project =~ /^core|drupal$/
     end
     
-    # Determine if the project passed actually exists as a module.
-    def project_exists?
-      debug 'Locating project page'
-      if !uri_available?("http://drupal.org/project/#{@project}")
-        abort "Failed to find #{@project}."
-      end
-    end
-    
     # Check if a uri is available.
     def uri_available?(uri)
       open(uri) rescue false
@@ -45,11 +36,45 @@ class Drupal
     
     # Install project.
     def install_project
-      debug "Located #{@project} page"
-      @markup = open("http://drupal.org/project/#{@project}") { |f| f.read } 
-      @markup.match /#{@project}-6\.x-[\d]\.[\d](?:\.\d)?(?:-\w+)?\.tar\.gz/
-      # TODO: make sure markup works..
-      # TODO: make sure match works..
+      debug "Locating #{@project} page"
+      # Locate tarball from project page
+      begin 
+        response = Net::HTTP.get_response(URI.parse("http://drupal.org/project/#{@project}"))
+        @markup = response.body
+        # TODO: check 404
+        debug 'Located the project page'
+      rescue
+        puts 'Failed to request page'
+      end
+      @markup.match /(#{@project}-6(?:.*?)\.gz)/
+      @tarball = $1
+      @tarpath = File.expand_path("#{@dest}/#{@tarball}")
+      abort "Failed to find Drupal 6 tar of #{@project}" if @tarball.nil?
+      debug "Found tarball #{@tarball}"
+      
+      # Fetch tarball
+      begin
+        response = Net::HTTP.get_response(URI.parse("http://ftp.drupal.org/files/projects/#{@tarball}"))
+        File.open(@tarpath, 'w') do |f|
+          f.write response.body
+        end
+        debug "Copied tarball to #{@tarpath}"
+      rescue
+        abort "Failed to find #{@tarpath}"
+      end
+      
+      # Extract tarball
+      @pwd = File.dirname(__FILE__)
+      Dir.chdir File.dirname(@tarpath)
+      Kernel.system "tar -xf #{@tarpath}" rescue abort "Failed to extract #{@tarpath}"
+      Dir.chdir @pwd
+      
+      # Remove tarball
+      Kernel.system "rm #{@tarpath}" rescue abort "Failed to remove #{@tarpath}"
+      
+      # Installation complete
+      debug "Project installed to #{File.dirname(@tarpath)}" unless @dest == '.'
+      debug 'Installation complete'
     end
   end
 end

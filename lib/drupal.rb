@@ -6,8 +6,9 @@
 #
 # == ARGUMENTS:
 # 
-# 	create module        Generates a module skeleton from an interactive wizard.
-#		todo list [total]    Displays list of todo items or a total.
+#   create module <module_name> [dir]  Generates a module skeleton from an interactive wizard. Current directory unless [dir] is specified.
+#   todo list [total]                  Displays list of todo items or a total.   
+#   install <core | project> [dir]  	 Install a Drupal project or core itself to [dir]
 #
 # == OPTIONS:
 # 
@@ -30,7 +31,13 @@
 #
 #   View total todo items only.
 #     drupal todo list total ./sites/all/modules
-     
+#    Install a module to the modules folder in my new installation (from drupal root)
+#      drupal install devel ./sites/all/modules
+#  
+#    Install a module when in the 'modules directory
+#      drupal install devel
+#  
+   
 require 'optparse'
 require 'ostruct'
 require File.dirname(__FILE__) + '/drupal/create_module'
@@ -41,7 +48,7 @@ class Drupal
   
   MAJOR = 0
   MINOR = 0
-  TINY = 2
+  TINY = 3
   VERSION = [MAJOR, MINOR, TINY].join('.')
   
   # Run the drupal development tool.
@@ -94,6 +101,7 @@ class Drupal
  
     create module <module_name> [dir]  Generates a module skeleton from an interactive wizard. Current directory unless [dir] is specified.
     todo list [total]                  Displays list of todo items or a total.   
+    install <core | project> [dir]  	 Install a Drupal project or core itself to [dir]    
     
   EXAMPLES:
   
@@ -111,6 +119,15 @@ class Drupal
 
     View total todo items only.
       drupal todo list total ./sites/all/modules   
+      
+    Install drupal core to the current directory.
+      drupal install core
+      
+    Install a module to the modules folder in my new installation (from drupal root)
+      drupal install devel ./sites/all/modules
+      
+    Install a module when in the 'modules directory
+      drupal install devel
        
 USAGE
   exit

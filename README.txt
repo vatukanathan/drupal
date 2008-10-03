@@ -17,8 +17,9 @@ to quickly generate and manage Drupal modules.
 
 == ARGUMENTS:
 
-	create module <module_name>   Generates a module skeleton from an interactive wizard.
-	todo list [total]    				  Displays list of todo items or a total.
+	create module <module_name>   		Generates a module skeleton from an interactive wizard.
+	todo list [total]    				  		Displays list of todo items or a total.
+	install <core | project> [dir]  	Install a Drupal project or core itself to [dir]
 
 == OPTIONS:
 
