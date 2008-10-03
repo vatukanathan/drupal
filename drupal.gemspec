@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
 		"lib/drupal.rb", 
 		"lib/drupal/create_module.rb", 
 		"lib/drupal/todo_list.rb", 
+		"lib/drupal/install.rb", 
 		"lib/drupal/templates/comments/file", 
 		"lib/drupal/templates/comments/large", 
 		"lib/drupal/templates/hooks/block", 

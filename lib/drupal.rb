@@ -35,6 +35,7 @@ require 'optparse'
 require 'ostruct'
 require File.dirname(__FILE__) + '/drupal/create_module'
 require File.dirname(__FILE__)  + '/drupal/todo_list'
+require File.dirname(__FILE__)  + '/drupal/install'
 
 class Drupal
   

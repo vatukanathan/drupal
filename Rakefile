@@ -10,7 +10,7 @@ task :build do
 end
 
 desc 'Remove ruby gem build data.'
-task :remove_build do
+task :remove do
   sh "sudo gem uninstall drupal"
   sh "sudo rm drupal-#{Drupal::VERSION}.gem"
 end

@@ -46,7 +46,8 @@ to quickly generate and manage Drupal modules.
 
   * Add formatted help option
   * Add download of Drupal core install via 'install core [version]'
-  * Add download of modules 'install <module> [version]' 
+  * Support versions for installer
+  * Support version prompt for project installation
   * Add graceful error handling
   * Add tests
 
