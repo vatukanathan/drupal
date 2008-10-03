@@ -31,11 +31,12 @@
 #
 #   View total todo items only.
 #     drupal todo list total ./sites/all/modules
-#    Install a module to the modules folder in my new installation (from drupal root)
-#      drupal install devel ./sites/all/modules
+#    
+#   Install a module to the modules folder in my new installation (from drupal root)
+#     drupal install devel ./sites/all/modules
 #  
-#    Install a module when in the 'modules directory
-#      drupal install devel
+#   Install a module when in the 'modules directory
+#     drupal install devel
 #  
    
 require 'optparse'
