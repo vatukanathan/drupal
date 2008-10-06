@@ -21,7 +21,7 @@ class Drupal
       File.open(filepath) do |file|
         items = []
         file.each_line do |line|
-          matches = line.match /(?:#|\/\/|\/\*)[\s]*todo:?[\s]*(.+)$/i
+          matches = line.match /(?:#|\/\/|\/\*|@)[\s]*todo:?[\s]*(.+)$/i
           items << matches[1] unless matches.nil? || matches.length <= 0
           @total += 1 unless matches.nil? || matches.length <= 0
         end
