@@ -45,6 +45,7 @@ to quickly generate and manage Drupal modules.
 	
 == TODO:
 
+  * Remove ':' from todo list items
   * Add formatted help option
   * Support versions for installer
   * Support version prompt for project installation
@@ -52,7 +53,7 @@ to quickly generate and manage Drupal modules.
   * Add installer for jQuery plugins?
   * Add graceful error handling
   * Add tests
-  * Refactor / encapsulate entire project
+  * Refactor / encapsulate entire project / make extendable
 
 == AUTHOR:
 
