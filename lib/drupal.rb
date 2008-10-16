@@ -45,14 +45,14 @@
 require 'optparse'
 require 'ostruct'
 require File.dirname(__FILE__) + '/drupal/create_module'
-require File.dirname(__FILE__)  + '/drupal/todo_list'
-require File.dirname(__FILE__)  + '/drupal/install'
+require File.dirname(__FILE__) + '/drupal/todo_list'
+require File.dirname(__FILE__) + '/drupal/install'
 
 class Drupal
   
   MAJOR = 0
   MINOR = 0
-  TINY = 5
+  TINY = 6
   VERSION = [MAJOR, MINOR, TINY].join('.')
   
   # Run the drupal development tool.

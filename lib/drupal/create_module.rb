@@ -68,6 +68,7 @@ class Drupal
           'boot',
           'init',
           'menu',
+          'install',
           'schema',
           'theme',
           'form_alter',
@@ -78,7 +79,6 @@ class Drupal
     # Create module from wizard results.
     def create_module
       puts "\n... Creating module '#{@module}' in '#{@dir}'"
-      # TODO: map hooks to specific order...usort equiv
       # Base directory
       create_dir("#{@module}")
       self.create_module_dirs

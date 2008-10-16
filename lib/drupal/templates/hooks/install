@@ -1,0 +1,7 @@
+
+/**
+ * Implementation of hook_install().
+ */
+function [module]_install() {
+  drupal_install_schema('[module]');
+}

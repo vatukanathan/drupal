@@ -1,3 +1,9 @@
+=== 0.0.6 / date
+
+* 1 Minor Feature:
+
+  * Added hook_install() support
+
 === 0.0.5 / 2008-10-06
 
 * 1 Minor Fix:
@@ -25,5 +31,5 @@
 
 === 0.0.1 / 2008-09-27
 
-* Initial release
+	* Initial release
 

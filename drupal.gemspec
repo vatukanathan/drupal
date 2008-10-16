@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
 		"lib/drupal/templates/comments/large", 
 		"lib/drupal/templates/hooks/block", 
 		"lib/drupal/templates/hooks/boot", 
+		"lib/drupal/templates/hooks/install", 
 		"lib/drupal/templates/hooks/cron", 
 		"lib/drupal/templates/hooks/form_alter", 
 		"lib/drupal/templates/hooks/init", 
