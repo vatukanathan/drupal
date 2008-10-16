@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name     = "drupal"
-  s.version  = "0.0.5"
-  s.date     = "2008-10-06"
+  s.version  = "0.0.6"
+  s.date     = "2008-10-16"
   s.summary  = "Drupal development kit"
   s.email    = "tj@vision-media.ca"
   s.homepage = "http://vision-media.ca/resources/drupal/drupal-module-builder-gem"
